@@ -5,10 +5,13 @@ import openai
 import os
 
 app = Flask(__name__)
-app.secret_key = 'your-secret-key'
-API_KEY='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'
-os.environ['OPENAI_Key'] = API_KEY
-openai.api_key = os.environ['OPENAI_Key']
+app.secret_key = '123efg@12345'
+
+API_KEY = os.environ.get('OPENAI_API_KEY')
+if not API_KEY:
+    raise ValueError('No API Key found')
+
+openai.api_key = API_KEY
 
 @app.route('/')
 def index():
