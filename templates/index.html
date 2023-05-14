@@ -4,14 +4,17 @@
 	<title>Chat Generator</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="/path/to/styles/default.min.css">
-<link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-<script>hljs.highlightAll();</script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/core.min.js" integrity="sha512-s0myw9LZumI3S1u4hFTuFjE4GJ/MaBFoAXwrhyWGcAEgHEC4ikOHue2+sBoZP22tbHFIh6A6xtffMTD+9xYC9w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js" integrity="sha512-bgHRAiTjGrzHzLyKOnpFvaEpGzJet3z4tZnXGjpsCcqOnAH6VGUx9frc5bcIhKTVLEiCO6vEhNAgx5jtLUYrfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/highlight.min.js" integrity="sha512-kpEKkrZPg6rYgEldNi5K2y7ocXQCZXe31XPNt6NmgX92Cuzn5fd4oOP4quatrI1AvL2XKlR8N36/46M2mfpnNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<style>
 		body {
-			background: url("https://wallpaperaccess.com/full/1398418.png");
+			background: url("https://i.pinimg.com/originals/4e/31/74/4e317480dee60001d24833490462c3de.jpg");
 		}
 
 		.response {
@@ -64,17 +67,13 @@
 		}
 	</style>
 </head>
-<link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
 <body>
 
 	<div class="container mt-5">
 		<div class="row justify-content-center">
 			<div class="col-md-8">
 				<div class="card">
-					<div class="card-header">Raj IT Hackathon Bot</div>
+					<div class="card-header" style="background:black;color:white;">Raj IT Hackathon Bot</div>
 					<div class="card-body">
 						{% if prompts %}
 						<h4>Prompts:</h4>
@@ -95,17 +94,17 @@
 						<form method="post" action="{{ url_for('generate_text') }}">
 							<div class="form-group">
 								<label for="prompt">Question:</label>
-								<input type="text" style="font-family: serif;" class="form-control" id="prompt" name="prompt" value="{{ prompt }}">
+								<input type="text" style="font-family: serif; background:" class="form-control" id="prompt" name="prompt" value="{{ prompt }}">
 							</div>
 							<button type="submit" class="btn btn-primary">See Magic</button>
 							<a href="{{ url_for('reset_history') }}" class="btn btn-danger">Reset History</a>
 						</form>
 						{% if response %}
 						<hr>
-						<p class="response">{{ response }}</p>
+						<p class="response" style="background:black; color:white;">{{ response }}</p>
 						{% endif %}
 					</div>
-
+					
 				</div>
 			</div>
 		</div>
