@@ -1,10 +1,12 @@
+
+
 from flask import Flask, session, request, render_template, redirect, url_for
 import openai
 import os
 
 app = Flask(__name__)
 app.secret_key = 'your-secret-key'
-API_KEY='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'
+API_KEY='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'
 os.environ['OPENAI_Key'] = API_KEY
 openai.api_key = os.environ['OPENAI_Key']
 
