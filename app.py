@@ -37,4 +37,4 @@ def generate_text():
     return render_template('index.html', prompts=prompts, responses=responses, response=response_text, prompt=prompt)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,port=5000)
